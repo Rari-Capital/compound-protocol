@@ -137,13 +137,18 @@ contract ComptrollerV2Storage is ComptrollerV1Storage {
     /// @notice Indexes of account addresses in the `whitelistArray` array
     mapping(address => uint256) internal whitelistIndexes;
 
+    /// @notice Maps CTokens to Max Supply cap indicating what should be the maximum supply cap for each asset
+    mapping(address => uint) public assetCaps;
+
 
     /**
      * @notice The Pause Guardian can pause certain actions as a safety mechanism.
+     * @notice The Asset Cap Guardian can set the asset Caps.
      *  Actions which allow users to remove their own assets cannot be paused.
      *  Liquidation / seizing / transfer can only be paused globally, not by market.
      */
     address public pauseGuardian;
+    address public AssetCapGuardian;
     bool public _mintGuardianPaused;
     bool public _borrowGuardianPaused;
     bool public transferGuardianPaused;

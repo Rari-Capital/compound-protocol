@@ -15,7 +15,8 @@ contract CarefulMath {
         NO_ERROR,
         DIVISION_BY_ZERO,
         INTEGER_OVERFLOW,
-        INTEGER_UNDERFLOW
+        INTEGER_UNDERFLOW,
+        LENGTH_OF_INPUTS_DO_NOT_MATCH
     }
 
     /**

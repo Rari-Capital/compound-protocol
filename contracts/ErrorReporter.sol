@@ -32,6 +32,7 @@ contract ComptrollerErrorReporter {
         EXIT_MARKET_BALANCE_OWED,
         EXIT_MARKET_REJECTION,
         RENOUNCE_ADMIN_RIGHTS_OWNER_CHECK,
+        SET_ASSET_CAP_GUARDIAN_CHECK,
         SET_CLOSE_FACTOR_OWNER_CHECK,
         SET_CLOSE_FACTOR_VALIDATION,
         SET_COLLATERAL_FACTOR_OWNER_CHECK,
@@ -49,9 +50,10 @@ contract ComptrollerErrorReporter {
         SUPPORT_MARKET_EXISTS,
         SUPPORT_MARKET_OWNER_CHECK,
         SET_PAUSE_GUARDIAN_OWNER_CHECK,
+        UNAUTHORIZED_CALLER_FOR_SETTING_ASSET_CAP,
         UNSUPPORT_MARKET_OWNER_CHECK,
         UNSUPPORT_MARKET_DOES_NOT_EXIST,
-        UNSUPPORT_MARKET_IN_USE
+        UNSUPPORT_MARKET_IN_USE       
     }
 
     /**
@@ -214,6 +216,7 @@ contract TokenErrorReporter {
       * @dev `error` corresponds to enum Error; `info` corresponds to enum FailureInfo, and `detail` is an arbitrary
       * contract-specific code that enables us to report opaque error codes from upgradeable contracts.
       **/
+    
     event Failure(uint error, uint info, uint detail);
 
     /**
